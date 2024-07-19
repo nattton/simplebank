@@ -5,9 +5,9 @@ import (
 	"log"
 	"net/http"
 
+	db "github.com/code-mobi/simplebank/db/sqlc"
 	"github.com/gin-gonic/gin"
 	"github.com/lib/pq"
-	db "gitlab.com/code-mobi/simplebank/db/sqlc"
 )
 
 type createAccountRequest struct {

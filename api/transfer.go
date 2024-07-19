@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"net/http"
 
+	db "github.com/code-mobi/simplebank/db/sqlc"
 	"github.com/gin-gonic/gin"
-	db "gitlab.com/code-mobi/simplebank/db/sqlc"
 )
 
 type transferRequest struct {

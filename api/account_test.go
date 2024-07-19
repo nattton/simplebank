@@ -10,10 +10,10 @@ import (
 	"net/http/httptest"
 	"testing"
 
+	mockdb "github.com/code-mobi/simplebank/db/mock"
+	db "github.com/code-mobi/simplebank/db/sqlc"
+	"github.com/code-mobi/simplebank/util"
 	"github.com/stretchr/testify/require"
-	mockdb "gitlab.com/code-mobi/simplebank/db/mock"
-	db "gitlab.com/code-mobi/simplebank/db/sqlc"
-	"gitlab.com/code-mobi/simplebank/util"
 	"go.uber.org/mock/gomock"
 )
 
@@ -91,7 +91,7 @@ func TestGetAccountAPI(t *testing.T) {
 			tc.buildStubs(store)
 
 			// start test server and send request
-			server := NewServer(store)
+			server := newTestServer(t, store)
 			recorder := httptest.NewRecorder()
 
 			url := fmt.Sprintf("/accounts/%d", tc.accountID)

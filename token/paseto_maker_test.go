@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
+	"github.com/code-mobi/simplebank/util"
 	"github.com/stretchr/testify/require"
-	"gitlab.com/code-mobi/simplebank/util"
 )
 
 func TestPasetoMaker(t *testing.T) {
