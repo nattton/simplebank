@@ -11,10 +11,10 @@ import (
 	"testing"
 	"time"
 
-	mockdb "github.com/code-mobi/simplebank/db/mock"
-	db "github.com/code-mobi/simplebank/db/sqlc"
-	"github.com/code-mobi/simplebank/token"
-	"github.com/code-mobi/simplebank/util"
+	mockdb "github.com/nattton/simplebank/db/mock"
+	db "github.com/nattton/simplebank/db/sqlc"
+	"github.com/nattton/simplebank/token"
+	"github.com/nattton/simplebank/util"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/mock/gomock"
 )

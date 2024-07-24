@@ -6,11 +6,11 @@ import (
 	"net/http"
 	"time"
 
-	db "github.com/code-mobi/simplebank/db/sqlc"
-	"github.com/code-mobi/simplebank/util"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	"github.com/lib/pq"
+	db "github.com/nattton/simplebank/db/sqlc"
+	"github.com/nattton/simplebank/util"
 )
 
 type createUserRequest struct {
