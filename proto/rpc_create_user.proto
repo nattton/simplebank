@@ -4,7 +4,7 @@ package pb;
 
 import "user.proto";
 
-option go_package = "github.com/nattton/simplebank";
+option go_package = "github.com/nattton/simplebank/pb";
 
 message CreateUserRequest {
     string username = 1;
