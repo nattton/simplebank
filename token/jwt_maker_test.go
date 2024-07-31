@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/code-mobi/simplebank/util"
 	"github.com/dgrijalva/jwt-go"
+	"github.com/nattton/simplebank/util"
 	"github.com/stretchr/testify/require"
 )
 

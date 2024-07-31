@@ -6,10 +6,10 @@ import (
 	"log"
 	"net/http"
 
-	db "github.com/code-mobi/simplebank/db/sqlc"
-	"github.com/code-mobi/simplebank/token"
 	"github.com/gin-gonic/gin"
 	"github.com/lib/pq"
+	db "github.com/nattton/simplebank/db/sqlc"
+	"github.com/nattton/simplebank/token"
 )
 
 type createAccountRequest struct {

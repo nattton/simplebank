@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/code-mobi/simplebank/token"
 	"github.com/gin-gonic/gin"
+	"github.com/nattton/simplebank/token"
 	"github.com/stretchr/testify/require"
 )
 

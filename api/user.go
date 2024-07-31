@@ -6,11 +6,11 @@ import (
 	"net/http"
 	"time"
 
-	db "github.com/code-mobi/simplebank/db/sqlc"
-	"github.com/code-mobi/simplebank/util"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	"github.com/lib/pq"
+	db "github.com/nattton/simplebank/db/sqlc"
+	"github.com/nattton/simplebank/util"
 )
 
 type createUserRequest struct {
@@ -47,6 +47,7 @@ func (server *Server) createUser(ctx *gin.Context) {
 	hashedPassword, err := util.HashPassword(req.Password)
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
+		return
 	}
 
 	arg := db.CreateUserParams{
@@ -115,6 +116,7 @@ func (server *Server) loginUser(ctx *gin.Context) {
 	accessToken, accessPayload, err := server.tokenMaker.CreateToken(user.Username, server.config.AccessTokenDuration)
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
+		return
 	}
 
 	refreshToken, refreshPayload, err := server.tokenMaker.CreateToken(
@@ -123,6 +125,7 @@ func (server *Server) loginUser(ctx *gin.Context) {
 	)
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
+		return
 	}
 
 	session, err := server.store.CreateSession(ctx, db.CreateSessionParams{
