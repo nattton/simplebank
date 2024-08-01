@@ -139,3 +139,17 @@ The service that we’re going to build is a simple bank. It will provide APIs f
   ```bash
   make test
   ```
+
+### AWS Command
+
+- Configure:
+
+  ```bash
+  aws configure
+  ```
+
+- Login Docker:
+
+  ```bash
+  aws ecr get-login-password | docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.<region>.amazonaws.com
+  ```
