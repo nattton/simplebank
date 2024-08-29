@@ -5,7 +5,7 @@ import (
 	"github.com/nattton/simplebank/util"
 )
 
-var vallidCurrency validator.Func = func(fl validator.FieldLevel) bool {
+var validCurrency validator.Func = func(fl validator.FieldLevel) bool {
 	if currency, ok := fl.Field().Interface().(string); ok {
 		return util.IsSupportCurrency(currency)
 	}

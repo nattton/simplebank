@@ -1,4 +1,4 @@
-DB_URL=postgresql://postgres:secret@localhost:5432/simple_bank?sslmode=disable
+DB_SOURCE=postgresql://postgres:secret@localhost:5432/simple_bank?sslmode=disable
 
 postgres:
 	docker run --name postgres16 --network bank-network -e POSTGRES_PASSWORD=secret -d -p 5432:5432 postgres
@@ -10,16 +10,16 @@ dropdb:
 	docker exec -t postgres16 dropdb simple_bank
 
 migrateup:
-	migrate -path db/migration/ -database "$(DB_URL)" -verbose up
+	migrate -path db/migration/ -database "$(DB_SOURCE)" -verbose up
 
 migrateup1:
-	migrate -path db/migration/ -database "$(DB_URL)" -verbose up 1
+	migrate -path db/migration/ -database "$(DB_SOURCE)" -verbose up 1
 
 migratedown:
-	migrate -path db/migration/ -database "$(DB_URL)" -verbose down
+	migrate -path db/migration/ -database "$(DB_SOURCE)" -verbose down
 
 migratedown1:
-	migrate -path db/migration/ -database "$(DB_URL)" -verbose down 1
+	migrate -path db/migration/ -database "$(DB_SOURCE)" -verbose down 1
 
 db_docs:
 	dbdocs build doc/db.dbml 

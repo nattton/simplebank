@@ -17,3 +17,4 @@ services:
       - DB_SOURCE=postgresql://postgres:secret@postgres:5432/simple_bank?sslmode=disable
     depends_on:
       - postgres
+    entrypoint: entrypoint
